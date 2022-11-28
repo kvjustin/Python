@@ -1,0 +1,109 @@
+AIM :-
+To perform auto correlation on a given signal
+SOFTWARE USED :- Python
+THEORY :- it is defined as the measure of similarity between a signal and its delayed version
+the auto-correlation of a signal x(n) with x(n) is defined as
+𝑟
+𝑥𝑥
+(𝑙) =
+𝑛=−∞
+∞
+∑ 𝑥(𝑛)𝑥(𝑛 − 𝑙)
+PROGRAM :-
+#Autocorrelation
+import matplotlib.pyplot as plt
+import numpy as np
+np.random.seed(40)
+data = np.random.randn(30)
+plt.title("Autocorrelation Plot")
+plt.xlabel("Lags")
+plt.acorr(data, maxlags=15)
+print("The Autocorrelation plot for the data is:")
+plt.grid(True)
+plt.show()
+OUTPUT :
+
+
+
+
+RESULT :-
+
+Hence autocorrelation of given signal is done by using python software
+
+AIM :-
+
+To perform cross correlation on two given signals
+
+SOFTWARE USED :-
+
+Python
+
+THEORY :-
+
+Cross correlation tells the similarity of two signals
+
+Cross correlation of two signals 𝑥 and
+
+1
+
+(𝑛) 𝑥
+
+2
+
+(𝑛)
+
+𝑅
+
+𝑥
+
+1
+
+𝑥
+
+2
+
+(𝑘) =
+
+𝑛=−∞
+
+∞
+
+∑ 𝑥
+
+1
+
+(𝑛)𝑥
+
+2
+
+(𝑛 − 𝑘)
+
+PROGRAM :-
+
+import numpy as np
+
+sig1 = np.sin(np.r_[-1:1:0.1])
+
+sig2 = np.sin(np.r_[-1:0:0.1] + np.pi/4)
+
+corr = (len(sig1) - len(sig2) + 1) * [0]
+
+for l in range(len(corr)):
+
+corr[l] = sum([sig1[i+l] * sig2[i] for i in range(len(sig2))])
+
+print(corr)
+
+OUTPUT :-
+
+[-0.471998494510103, -0.24686753498102817, -0.019269956645980538,
+
+0.20852016072607304, 0.4342268135797527, 0.6555948156484444,
+
+0.8704123310300105, 1.076532974119988, 1.271897255587048, 1.4545531601096169,
+
+1.62267565026772]
+
+RESULT :-
+
+Hence cross correlation of given signal is done by using python software
